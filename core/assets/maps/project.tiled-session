@@ -1,0 +1,32 @@
+{
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "BG.tsx": {
+            "scaleInEditor": 0.06
+        },
+        "SpriteAtlasTexture-Grimmflame-512x256-fmt12.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "C:/Users/Asus/Downloads/Hollow Knight sprites 1.5.12459 (Nintendo Switch 2 edition)/Particles & Effects/Fire & Smoke",
+    "map.height": 2000,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 8,
+    "map.tileWidth": 8,
+    "map.width": 1000,
+    "openFiles": [
+    ],
+    "project": "project.tiled-project",
+    "recentFiles": [
+        "BG.tsx",
+        "SpriteAtlasTexture-Grimmflame-512x256-fmt12.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 82,
+        "width": 82
+    }
+}

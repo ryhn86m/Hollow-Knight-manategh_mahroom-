@@ -1,0 +1,449 @@
+{
+    "activeFile": "crystal_map_Test.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "5.tsx": {
+            "scaleInDock": 0.5,
+            "scaleInEditor": 1
+        },
+        "66.tsx": {
+            "scaleInDock": 1
+        },
+        "BG.tsx": {
+            "scaleInDock": 0.125,
+            "scaleInEditor": 0.25
+        },
+        "BG2.tsx": {
+            "scaleInDock": 0.33,
+            "scaleInEditor": 1
+        },
+        "BG_Forgotten_crossroad.tsx": {
+            "scaleInDock": 0.5,
+            "scaleInEditor": 1
+        },
+        "BG_Forgotten_crossroad2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/Asus/Desktop/SpriteAtlasTexture-Crystal_Spikes (Group 0)-512x256-fmt4.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
+        "C:/Users/Asus/Desktop/brk_Crystal2.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
+        "C:/Users/Asus/Desktop/brk_Crystal3.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.015625
+        },
+        "C:/Users/Asus/Desktop/crystal_map.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 3362,
+                "y": 7754
+            }
+        },
+        "C:/Users/Asus/Desktop/crystal_spike_short.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.0625
+        },
+        "C:/Users/Asus/Desktop/grimm_particle_flame.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
+        "C:/Users/Asus/Desktop/mine_break_wall.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.125
+        },
+        "FG_bone_pile.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "FG_eggs_04_0001_03.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "FG_webs.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "SpriteAtlasTexture-Crystal_Spikes (Group 0)-512x256-fmt4.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.125,
+            "scaleInEditor": 1
+        },
+        "Void Heart - charm_black.tsx": {
+            "scaleInDock": 1
+        },
+        "atlas0 #26003.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.125,
+            "scaleInEditor": 1
+        },
+        "bone_floor_02_0001_Layer-0.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "brk_Crystal2.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.75,
+            "scaleInEditor": 1
+        },
+        "brk_Crystal3.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.75,
+            "scaleInEditor": 1
+        },
+        "cd_FG_bone_02.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "cd_FG_bone_08.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "cd_chain.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "cd_floor_highway_05.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "crossroads_false_door_0001_3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "crystak_kocholoo.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "crystal_map.tmx": {
+            "expandedObjectLayers": [
+                6,
+                7
+            ],
+            "scale": 0.33,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 5828.787878787879,
+                "y": 6383.333333333334
+            }
+        },
+        "crystal_map2.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 4060,
+                "y": 8370
+            }
+        },
+        "crystal_map3.tmx": {
+            "expandedObjectLayers": [
+                6,
+                7
+            ],
+            "scale": 0.25,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 7518,
+                "y": 6730
+            }
+        },
+        "crystal_map_Test.tmx": {
+            "expandedObjectLayers": [
+                6,
+                7
+            ],
+            "scale": 0.5,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 17155,
+                "y": 7867
+            }
+        },
+        "crystal_map_Test_backup.tmx": {
+            "expandedObjectLayers": [
+                6,
+                7
+            ],
+            "scale": 0.5,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 12005,
+                "y": 12015
+            }
+        },
+        "crystal_map_Test_backup3.tmx": {
+            "expandedObjectLayers": [
+                6,
+                7
+            ],
+            "scale": 0.5,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 12005,
+                "y": 12015
+            }
+        },
+        "crystal_map_backup.tmx": {
+            "expandedObjectLayers": [
+                6,
+                7
+            ],
+            "scale": 0.0625,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 12008,
+                "y": 12008
+            }
+        },
+        "crystal_spike_short.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.5,
+            "scaleInEditor": 1
+        },
+        "floor_FG_rock_04_0001_05.tsx": {
+            "scaleInDock": 0.12,
+            "scaleInEditor": 1
+        },
+        "floor_FG_rock_06_0001_03.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "floor_rubble_01.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "grimm_particle_flame.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mine_break_wall.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.5,
+            "scaleInEditor": 1
+        },
+        "mine_globe_02.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mine_loose_stones.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.5,
+            "scaleInEditor": 1
+        },
+        "mine_spike.tsx": {
+            "scaleInDock": 0.33,
+            "scaleInEditor": 1
+        },
+        "mine_spike2.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.125,
+            "scaleInEditor": 1
+        },
+        "mine_spike_fg_clear.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.25,
+            "scaleInEditor": 1
+        },
+        "mine_summit_statue.tsx": {
+            "scaleInDock": 0.12,
+            "scaleInEditor": 1
+        },
+        "mines_additions_metal_wall_simple.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.0625,
+            "scaleInEditor": 1
+        },
+        "mines_metal_thin_floors_0001_a #3014.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mines_quake_floor.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "nailmaster_03_cloth #01904.tsx": {
+            "scaleInDock": 0.25,
+            "scaleInEditor": 1
+        },
+        "rocks_BG_01.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "roof.tsx": {
+            "scaleInDock": 1
+        },
+        "roof_crystal.tsx": {
+            "scaleInDock": 0.5
+        },
+        "shop_0001_FG.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "shop_0003_Color-Balance-1-copy.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "shop_0004_Color-Balance-1-copy-3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "sotoon.tsx": {
+            "scaleInDock": 0.125,
+            "scaleInEditor": 1
+        },
+        "spikes0002.tsx": {
+            "scaleInDock": 0.5,
+            "scaleInEditor": 1
+        },
+        "spritesheet(1).tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "statue_07.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "summit__0002_lore_stone_03_shine.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "summit_spikes_0001_3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "temple_lamp_03.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "vil_lamp_02.tsx": {
+            "scaleInDock": 0.5,
+            "scaleInEditor": 1
+        },
+        "wall.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.25,
+            "scaleInEditor": 1
+        },
+        "wd_roof_05_r.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "wd_string_03.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "wd_string_03_r.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "well_extension_0000_2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "well_extension_0001_1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "C:/Users/Asus/IdeaProjects/4..1/core/assets/maps",
+    "map.height": 3000,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 8,
+    "map.tileWidth": 8,
+    "map.width": 3000,
+    "openFiles": [
+        "mine_break_wall.tsx",
+        "crystal_spike_short.tsx",
+        "SpriteAtlasTexture-Crystal_Spikes (Group 0)-512x256-fmt4.tsx",
+        "brk_Crystal3.tsx",
+        "brk_Crystal2.tsx",
+        "grimm_particle_flame.tsx",
+        "crystal_map2.tmx",
+        "C:/Users/Asus/Desktop/crystal_map.tmx",
+        "crystal_map3.tmx",
+        "crystal_map_Test.tmx",
+        "mines_additions_metal_wall_simple.tsx",
+        "wall.tsx",
+        "atlas0 #26003.tsx",
+        "crystak_kocholoo.tsx",
+        "5.tsx",
+        "mine_globe_02.tsx",
+        "floor_rubble_01.tsx",
+        "mine_loose_stones.tsx",
+        "mine_spike_fg_clear.tsx",
+        "mine_spike.tsx",
+        "mine_spike2.tsx",
+        "summit_spikes_0001_3.tsx",
+        "sotoon.tsx",
+        "crystal_map_backup.tmx",
+        "crystal_map_Test_backup.tmx",
+        "BG.tsx",
+        "BG2.tsx",
+        "BG_Forgotten_crossroad.tsx",
+        "BG_Forgotten_crossroad2.tsx",
+        "mines_quake_floor.tsx",
+        "mines_metal_thin_floors_0001_a #3014.tsx",
+        "vil_lamp_02.tsx",
+        "crossroads_false_door_0001_3.tsx",
+        "cd_floor_highway_05.tsx",
+        "floor_FG_rock_06_0001_03.tsx",
+        "rocks_BG_01.tsx",
+        "floor_FG_rock_04_0001_05.tsx",
+        "wd_roof_05_r.tsx",
+        "statue_07.tsx",
+        "temple_lamp_03.tsx",
+        "well_extension_0000_2.tsx",
+        "FG_bone_pile.tsx",
+        "FG_webs.tsx",
+        "shop_0001_FG.tsx",
+        "shop_0004_Color-Balance-1-copy-3.tsx",
+        "bone_floor_02_0001_Layer-0.tsx",
+        "cd_FG_bone_08.tsx",
+        "well_extension_0001_1.tsx",
+        "cd_chain.tsx",
+        "wd_string_03.tsx",
+        "wd_string_03_r.tsx",
+        "shop_0003_Color-Balance-1-copy.tsx",
+        "cd_FG_bone_02.tsx",
+        "FG_eggs_04_0001_03.tsx",
+        "mine_summit_statue.tsx",
+        "summit__0002_lore_stone_03_shine.tsx",
+        "crystal_map_Test_backup3.tmx",
+        "spritesheet(1).tsx",
+        "spikes0002.tsx"
+    ],
+    "project": "map_crystal.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "mine_break_wall.tsx",
+        "crystal_spike_short.tsx",
+        "SpriteAtlasTexture-Crystal_Spikes (Group 0)-512x256-fmt4.tsx",
+        "brk_Crystal3.tsx",
+        "brk_Crystal2.tsx",
+        "grimm_particle_flame.tsx",
+        "crystal_map2.tmx",
+        "C:/Users/Asus/Desktop/crystal_map.tmx",
+        "crystal_map3.tmx",
+        "spikes0002.tsx",
+        "spritesheet(1).tsx",
+        "crystal_map_Test_backup3.tmx"
+    ],
+    "resizeMap.removeObjects": false,
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 8,
+        "width": 8
+    }
+}
