@@ -77,7 +77,27 @@ public class Boss {
             invincibleTimer -= delta;
         }
     }
+    public void reset() {
+        this.dead = false;
+        this.hp = maxHp;
+        this.isPhase2 = false;
+        this.state = BossState.Idle;
+        this.lastState = BossState.Idle;
+        this.lastAttackState = BossState.Idle;
+        this.stateTime = 0;
+        this.stunTimer = 0;
+        this.hitCounter = 0;
+        this.invincibleTimer = 0;
+        this.hitWindowTimer = 0;
 
+
+        this.normalSpeedRun = 130f;
+        this.chargeSpeedRun = 500f;
+        this.aiCooldown = 2f;
+
+        this.hitKnight = false;
+        this.clearCameraShakeRequest();
+    }
     public void takeDamage(int amount) {
         if (dead) return;
         hp -= amount;
@@ -89,6 +109,7 @@ public class Boss {
         if (!isPhase2 && hp <= maxHp / 2) {
             isPhase2 = true;
             state = BossState.Stun;
+            stateTime = 0;
             stunTimer = stunDuration;
             velocityX = 0;
         } else if (hp <= 0) {
@@ -97,6 +118,8 @@ public class Boss {
     }
     private void die() {
         dead = true;
+        this.state = BossState.Death;
+        this.stateTime = 0;
         lastState =BossState.Death;
         GameModel.getInstance().addKill();
         if (!GameModel.getInstance().isHasUsedFocus()) {

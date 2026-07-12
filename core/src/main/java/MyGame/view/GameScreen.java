@@ -69,6 +69,7 @@ public class GameScreen implements Screen {
     private HUDRenderer hudRenderer;
     private float mapStartX;
     private float mapEndX;
+    private float mapTopY;
     private float shakeTime = 0f;
     private float shakePower = 0f;
     float transitionPoint = 10338.163f;
@@ -218,6 +219,7 @@ public class GameScreen implements Screen {
     }
     @Override
     public void render(float delta) {
+        System.out.println(knight.getX()+" "+knight.getY());
         if(knight.getX() ==  currentMapRenderer.getHelper().getHeartSpawn().x &&
             knight.getY() ==  currentMapRenderer.getHelper().getHeartSpawn().y ){
             model.setVoidHeartLocked(false);
@@ -254,11 +256,10 @@ public class GameScreen implements Screen {
 
         float clampedX = MathUtils.clamp(knight.getX(), leftLimit, rightLimit);
         float yCameraOffset = -400f;
-        float targetY = knight.getY() - yCameraOffset;
-
-        // ==========================================
-        // تعریف متغیرهای دوربین در جای درست (جلوگیری از ارور ناشناس بودن)
-        // ==========================================
+        float cameraVisibleHeight = viewport.getWorldHeight() * camera.zoom;
+        float desiredTargetY = knight.getY() - yCameraOffset;
+        float maxTargetY = mapTopY - (cameraVisibleHeight / 2f);
+        float targetY = Math.min(desiredTargetY, maxTargetY);
         float lerpSpeed = 5f * delta;
         float baseCamX;
         float baseCamY;
@@ -271,15 +272,27 @@ public class GameScreen implements Screen {
 
 
                 if (!isBossArenaLocked && !currentBoss.isDead() &&
-                    Math.abs(knight.getX() - bossSpawn.x) < 1638f && Math.abs(knight.getY() - bossSpawn.y) < 300) {
+                    Math.abs(knight.getX() - bossSpawn.x) < 1638f && Math.abs(knight.getY() - bossSpawn.y) < 100 && wall2.isBroken()) {
                     isBossArenaLocked = true;
                 } else if (currentBoss.isDead()) {
                     isBossArenaLocked = false;
                 }
 
+                if (!currentBoss.isDead()) {
+                    float arenaLeft = bossSpawn.x - 160f;
+                    float arenaRight = bossSpawn.x + 1738f;
 
+
+
+                        if (currentBoss.getX() < arenaLeft) {
+                            currentBoss.setX(arenaLeft);
+                        }
+                        if (currentBoss.getX() > arenaRight - currentBoss.getWidth()) {
+                            currentBoss.setX(arenaRight - currentBoss.getWidth());
+                        }
+
+                }
                 if (isBossArenaLocked && !currentBoss.isDead()) {
-                    // ۱. مرزهای اتاق باس (همون اعدادی که خودت دادی)
                     float arenaLeft = bossSpawn.x - 160f;
                     float arenaRight = bossSpawn.x + 1738f;
                     float arenaBottom = bossSpawn.y - 100f;
@@ -287,17 +300,13 @@ public class GameScreen implements Screen {
 
                     float arenaWidth = arenaRight - arenaLeft;
                     float arenaHeight = arenaTop - arenaBottom;
-                    // ۲. تغییر کلیدی: استفاده از Math.min!
-                    // این کار باعث میشه دوربین فیکسِ ارتفاع ۶۹۶ بشه و بیرون اتاق (بالا و پایین) اصلاً دیده نشه
                     float zoomX = arenaWidth / viewport.getWorldWidth();
                     float zoomY = arenaHeight / viewport.getWorldHeight();
                     camera.zoom = Math.min(zoomX, zoomY);
 
-                    // ۳. محاسبه ابعاد دوربینی که الان زوم شده
                     float cameraVisibleWidth = viewport.getWorldWidth() * camera.zoom;
-                    float cameraVisibleHeight = viewport.getWorldHeight() * camera.zoom;
+                     cameraVisibleHeight = viewport.getWorldHeight() * camera.zoom;
 
-                    // ۴. دیوار کشی برای کاراکتر (که از اتاق خارج نشه)
                     if (knight.getY() > arenaTop - knight.getHeight()) {
                         knight.setY(arenaTop - knight.getHeight());
                     }
@@ -308,17 +317,14 @@ public class GameScreen implements Screen {
                         knight.setX(arenaRight - knight.getWidth());
                     }
 
-                    // ۵. منطق حرکت دوربین در اتاق باس
-                    // محور Y رو فیکس می‌کنیم وسط اتاق
                     float desiredCamY = arenaBottom + (arenaHeight / 2f);
-                    // محور X رو میدیم به کاراکتر که دنبالش کنه
                     float desiredCamX = knight.getX();
 
-                    // ۶. Clamp کردن دوربین: اجازه نمیدیم دوربین از لبه‌های اتاق رد بشه
+
                     clampedX = MathUtils.clamp(desiredCamX, arenaLeft + (cameraVisibleWidth / 2f), arenaRight - (cameraVisibleWidth / 2f));
                     targetY = MathUtils.clamp(desiredCamY, arenaBottom + (cameraVisibleHeight / 2f), arenaTop - (cameraVisibleHeight / 2f));
 
-                    // ۷. حرکت نرم (Lerp)
+
                     baseCamX = camera.position.x + (clampedX - camera.position.x) * lerpSpeed;
                     baseCamY = camera.position.y + (targetY - camera.position.y) * lerpSpeed;
 
@@ -373,9 +379,7 @@ public class GameScreen implements Screen {
 
         camera.position.set(baseCamX, baseCamY, 0);
         if (model.isBossDefeated() && model.getBossDefeatTimer() >= 10f) {
-//            if (Main.getMain().isMusicOn()) {
-//                 Main.getMain().changeMusic(MusicTracks.End_Game);
-//            }
+
             Main.getMain().setScreen(new EndGameMenu( model));
             return;
         }
@@ -540,9 +544,6 @@ public class GameScreen implements Screen {
             hudRenderer.render(delta);
             currentMapRenderer.renderForeground(camera);
 
-//            for(SolidBlock block : currentMapRenderer.getSolidBlocks()) {
-//                shapeRenderer.rect(block.getBounds().x, block.getBounds().y, block.getBounds().width, block.getBounds().height);
-//            }
      shapeRenderer.end();
         } else {
 
@@ -587,9 +588,11 @@ public class GameScreen implements Screen {
         AchievementsMenuController.getInstance().addObserver(this.achievementPopup);
         mapStartX = Float.MAX_VALUE;
         mapEndX = Float.MIN_VALUE;
+        mapTopY = Float.MIN_VALUE;
         for(SolidBlock block : currentMapRenderer.getSolidBlocks()){
             mapStartX = Math.min(mapStartX, block.getBounds().x);
             mapEndX = Math.max(mapEndX, block.getBounds().x + block.getBounds().width);
+            mapTopY = Math.max(mapTopY, block.getBounds().y + block.getBounds().height);
         }
 
         stage = new Stage(Main.getMain().getViewport());
@@ -627,7 +630,7 @@ public class GameScreen implements Screen {
     @Override
     public void resize(int width, int height) {
         viewport.update(width,height,true);
-        //camera.setToOrtho(false, width, height);
+
         if (pauseMenu != null && pauseMenu.getStage() != null) {
             pauseMenu.getStage().getViewport().update(width, height, true);
         }
@@ -665,7 +668,19 @@ public class GameScreen implements Screen {
         knight.setState(KnightState.IDLE);
         wall.reset();
         currentMapRenderer.reset();
-    }
+        if (currentMapRenderer instanceof ForgottenCrossroadsRenderer) {
+            Boss boss = ((ForgottenCrossroadsRenderer) currentMapRenderer).getBoss();
+            if (boss != null && !boss.isDead()) {
+                boss.reset();
+
+
+                Vector2 bossSpawn = currentMapRenderer.getHelper().getBossSpawn();
+                if (bossSpawn != null) {
+                    boss.setX(bossSpawn.x);
+                    boss.setY(bossSpawn.y);
+                }
+            }
+    } }
     public void switchEnvironment(EnvironmentRenderer newRenderer) {
         if (currentMapRenderer != null) {
             currentMapRenderer.dispose();
@@ -677,7 +692,7 @@ public class GameScreen implements Screen {
         Vector2 spawn;
 
         if (model.isTeleportToBoss()) {
-            spawn = currentMapRenderer.getHelper().getKnightSpawn3();
+            spawn = new Vector2(17889.041f,15675.0f);
             model.setTeleportToBoss(false);
         } else {
             spawn = currentMapRenderer.getPlayerSpawnPoint();
@@ -691,9 +706,11 @@ public class GameScreen implements Screen {
 
         mapStartX = Float.MAX_VALUE;
         mapEndX = Float.MIN_VALUE;
+        mapTopY = Float.MIN_VALUE;
         for(SolidBlock block : currentMapRenderer.getSolidBlocks()){
             mapStartX = Math.min(mapStartX, block.getBounds().x);
             mapEndX = Math.max(mapEndX, block.getBounds().x + block.getBounds().width);
+            mapTopY = Math.max(mapTopY, block.getBounds().y + block.getBounds().height);
         }
 
         InputMultiplexer inputProcessor = (InputMultiplexer) Gdx.input.getInputProcessor();

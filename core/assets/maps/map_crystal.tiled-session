@@ -59,6 +59,14 @@
             "dynamicWrapping": true,
             "scaleInDock": 0.125
         },
+        "Death Land_000.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Death Land_007.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "FG_bone_pile.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
@@ -68,6 +76,18 @@
             "scaleInEditor": 1
         },
         "FG_webs.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Mines_20_extras_0004_5.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Spider_interior_set_0014_spider_web_16.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Spider_interior_set_0016_spider_web_15.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
@@ -162,10 +182,10 @@
                 7
             ],
             "scale": 0.5,
-            "selectedLayer": 6,
+            "selectedLayer": 8,
             "viewCenter": {
-                "x": 17155,
-                "y": 7867
+                "x": 12005,
+                "y": 12015
             }
         },
         "crystal_map_Test_backup.tmx": {
@@ -311,6 +331,10 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "statue_02.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "statue_07.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
@@ -422,7 +446,13 @@
         "summit__0002_lore_stone_03_shine.tsx",
         "crystal_map_Test_backup3.tmx",
         "spritesheet(1).tsx",
-        "spikes0002.tsx"
+        "spikes0002.tsx",
+        "statue_02.tsx",
+        "Spider_interior_set_0014_spider_web_16.tsx",
+        "Spider_interior_set_0016_spider_web_15.tsx",
+        "Mines_20_extras_0004_5.tsx",
+        "Death Land_007.tsx",
+        "Death Land_000.tsx"
     ],
     "project": "map_crystal.tiled-project",
     "property.type": "bool",
@@ -436,9 +466,9 @@
         "crystal_map2.tmx",
         "C:/Users/Asus/Desktop/crystal_map.tmx",
         "crystal_map3.tmx",
-        "spikes0002.tsx",
-        "spritesheet(1).tsx",
-        "crystal_map_Test_backup3.tmx"
+        "Death Land_000.tsx",
+        "Death Land_007.tsx",
+        "Mines_20_extras_0004_5.tsx"
     ],
     "resizeMap.removeObjects": false,
     "tileset.lastUsedFormat": "tsx",

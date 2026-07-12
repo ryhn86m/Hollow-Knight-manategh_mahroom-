@@ -21,7 +21,13 @@ public class BossController {
     }
     public void update(float delta, float knightX, float knightY) {
         delta = Math.min(delta, 0.05f);
-        if (boss.isDead()) return;
+        boss.setStateTime(boss.getStateTime() + delta);
+
+
+        if (boss.isDead()) {
+            applyPhysics(delta);
+            return;
+        }
 
         if (!isAwake) {
             boolean isCloseHorizontally = Math.abs(boss.getX() - knightX) < 1000f;
@@ -71,17 +77,15 @@ public class BossController {
         float oldX = boss.getX();
         float oldY = boss.getY();
 
-        // 1. اعمال حرکت محور X و بررسی برخورد با دیوار
+
         boss.setX(boss.getX() + (boss.getVelocityX() * delta));
         for (SolidBlock block : solidBlocks) {
             if (boss.getBounds().overlaps(block.getBounds())) {
 
-                // پیدا کردن مرکز باس و مرکز بلاکِ دیوار
+
                 float bossCenter = boss.getBounds().x + (boss.getBounds().width / 2f);
                 float blockCenter = block.getBounds().x + (block.getBounds().width / 2f);
 
-                // فقط در صورتی سرعتش رو صفر کن که داره "به سمت داخل دیوار" هل داده میشه
-                // این شرط اجازه میده اگر تو دیوار گیر کرد، بتونه به سمت بیرون حرکت کنه و آزاد شه!
                 if ((bossCenter < blockCenter && boss.getVelocityX() > 0) ||
                     (bossCenter > blockCenter && boss.getVelocityX() < 0)) {
 
@@ -96,7 +100,7 @@ public class BossController {
             }
         }
 
-        // 2. اعمال جاذبه و حرکت محور Y
+
         float newVelocityY = boss.getVelocityY() + (GRAVITY * delta);
         boss.setVelocityY(Math.max(newVelocityY, -1000f));
 
@@ -104,20 +108,18 @@ public class BossController {
         for (SolidBlock block : solidBlocks) {
             if (boss.getBounds().overlaps(block.getBounds())) {
 
-                if (boss.getVelocityY() < 0) { // برخورد با زمین
+                if (boss.getVelocityY() < 0) {
                     float blockTop = block.getBounds().y + block.getBounds().height;
-                    // حاشیه اطمینان رو از 35 به 45 افزایش دادیم که موقع افتادن سریع تو زمین گیر نکنه
+
                     if (oldY >= blockTop - 45f) {
                         boss.setY(blockTop);
                         boss.setVelocityY(0);
                         break;
                     }
                 }
-                else if (boss.getVelocityY() > 0) { // برخورد با سقف
+                else if (boss.getVelocityY() > 0) {
                     float blockBottom = block.getBounds().y;
-                    // رفع باگ سقف کاذب:
-                    // فقط در صورتی سرعت صفر میشه که باس واقعاً "زیرِ" بلاک باشه (سقف واقعی)
-                    // نه اینکه کنار یه دیوار عمودی وایساده باشه!
+
                     if (oldY + boss.getHitboxHeight() <= blockBottom + 45f) {
                         boss.setY(oldY);
                         boss.setVelocityY(0);
@@ -167,12 +169,10 @@ public class BossController {
             case Jump:
             case JumpAttack:
             case DefensiveJump:
-                if (boss.getVelocityY() == 0 && boss.getStateTime() > 0.1f) {
-
+                if (Math.abs(boss.getVelocityY()) < 1f && boss.getStateTime() > 0.1f) {
                     if (boss.getState() == BossState.JumpAttack) {
                         boss.requestCameraShake(0.8f, 15f);
                     }
-
                     changeState(BossState.Idle);
                     boss.setAiCooldown(boss.isPhase2() ? 0.4f : 0.8f);
                 }

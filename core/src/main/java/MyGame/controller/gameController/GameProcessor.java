@@ -97,7 +97,7 @@ public class GameProcessor implements InputProcessor {
             return true;
         }
         else if (keycode == KeyController.ATTACK) {
-            if (!knight.isAttacking()) {
+            if (!knight.isAttacking() && !knight.isDashing()) {
                 if(Main.getMain().isSfx()) Sfx.NailSlash.play();
                 if(Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
                     knight.attackDown();
