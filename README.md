@@ -1,33 +1,35 @@
-# 4..1
+# Hollow Knight: Very Simplified Edition 🗡🐛
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![LibGDX](https://img.shields.io/badge/LibGDX-E34F26?style=for-the-badge&logo=libgdx&logoColor=white)
+![Sharif University](https://img.shields.io/badge/Sharif_University_of_Technology-0050A0?style=for-the-badge)
 
-This project was generated with a template including simple application launchers and an `ApplicationAdapter` extension that draws libGDX logo.
+## 📌 About The Project
+This project is the graphic assignment for the Advanced Programming course at Sharif University of Technology.
 
-## Platforms
+It is a scaled-down, simplified 2D side-scrolling Metroidvania game inspired by the acclaimed title *Hollow Knight*. Developed entirely in Java using the LibGDX framework, this project demonstrates core game development mechanics including state machines, collision detection, physics, entity AI, and UI management.
 
-- `core`: MyGame.Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
+## ⚙️ Tech Stack
+*   Language: Java
+*   Framework: LibGDX
+*   Build Tool: Gradle
+*   Data Storage:  SQLite (for save/load states)
 
-## Gradle
+## ✨ Core Features
+Despite being a compact version, the game implements several authentic mechanics from the original title:
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
-
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
-
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+*   **Fluid Platforming & Movement:**
+    *   Includes walking, jumping, double jumping, dashing, and wall-sliding.
+    *   Features the iconic "Pogo Jump" mechanic (downward attack on spikes/enemies to bounce).
+*   **Combat System:**
+    *   Melee Nail attacks with directional variations (up, down, forward).
+    *   Spell casting system including *Vengeful Spirit* and *Howling Wraiths*.
+*   **Health & Soul Mechanics:**
+    *   Discrete "Mask" based health system.
+    *   "Soul" vessel that fills by striking enemies, which can be consumed to "Focus" and heal or cast spells.
+*   **Dynamic Enemies & Boss Fight:**
+    *   Custom AI for ground, flying, and static enemies (e.g., Crystal Guardian, Mosquito, Husk Hornhead).
+    *   A fully operational, multi-phase Boss Fight against the False Knight featuring distance-based decision making, anti-spam AI logic, camera shake, and a stun phase.
+*   **Inventory & Charms:** A functional inventory system allowing players to equip "Charms" (e.g., Dashmaster, Quick Slash) that act as passive modifiers to the gameplay loop.
+*   **Interactive Environments:** Playable maps like *Forgotten Crossroads* and *Crystal Peaks* featuring hazardous spikes, breakable walls, and secret rooms.
+*   **Menus & Progress:** Complete UI flow including Main Menu, Pause Menu, Settings, an Achievement System, and Save/Load capabilities.

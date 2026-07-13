@@ -91,7 +91,7 @@ public SettingsMenu(SettingsMenuController controller, Skin skin){
     listStyle.font = this.font;
     listStyle.fontColorSelected = Color.CYAN;
     listStyle.fontColorUnselected = Color.LIGHT_GRAY;
-    listStyle.selection = createColorDrawable(200, 40, Color.BLUE); // رنگ آیتم انتخاب شده
+    listStyle.selection = createColorDrawable(200, 40, Color.BLUE);
     selectStyle.listStyle = listStyle;
 
     musicVolume = new Slider(0f, 100f, 1f, false, sliderStyle);

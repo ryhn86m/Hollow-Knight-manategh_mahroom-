@@ -64,7 +64,7 @@ public class AchievementsMenu extends MenusController implements Screen {
         Table rootTable = new Table();
         rootTable.setFillParent(true);
         rootTable.top().pad(40f);
-        Label mainTitle = new Label(Main.getLanguage().Achievements, titleStyle); // اگر در Language نداری مستقیم بنویس "ACHIEVEMENTS"
+        Label mainTitle = new Label(Main.getLanguage().Achievements, titleStyle);
         rootTable.add(mainTitle).colspan(2).align(Align.center).padBottom(30f).row();
 
 
