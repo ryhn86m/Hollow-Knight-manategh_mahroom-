@@ -668,6 +668,7 @@ public class GameScreen implements Screen {
         knight.setState(KnightState.IDLE);
         wall.reset();
         currentMapRenderer.reset();
+        isBossArenaLocked = false;
         if (currentMapRenderer instanceof ForgottenCrossroadsRenderer) {
             Boss boss = ((ForgottenCrossroadsRenderer) currentMapRenderer).getBoss();
             if (boss != null && !boss.isDead()) {
